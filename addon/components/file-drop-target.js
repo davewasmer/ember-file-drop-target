@@ -2,6 +2,10 @@ import Ember from "ember";
 
 export default Ember.Component.extend({
 
+  ///////////////////////////
+  // Configuration Options //
+  ///////////////////////////
+
   /**
    * Allow multiple files to be selected at once. The selection action will pass
    * an array of Files rather than a single File if this is true.
@@ -18,6 +22,16 @@ export default Ember.Component.extend({
    * @type {RegExp}
    */
   allowedTypes: /.+/,
+
+  /**
+   * A convenience hook in case you want to customize the file object before it
+   * is set as the component's file/files value, or if you want to perform any
+   * other kind of processing.
+   *
+   * @param {File} file - the file selected by the user
+   */
+  fileDropped() {},
+
 
 
   classNames: 'file-drop-target',
@@ -185,15 +199,6 @@ export default Ember.Component.extend({
       this.set('file', files[0]);
     }
 
-  },
-
-  /**
-   * A convenience hook in case you want to customize the file object before it
-   * is set as the component's file/files value, or if you want to perform any
-   * other kind of processing.
-   *
-   * @param {File} file - the file selected by the user
-   */
-  fileDropped() {}
+  }
 
 });
