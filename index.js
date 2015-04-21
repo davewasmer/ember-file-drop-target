@@ -2,5 +2,6 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-file-drop-target'
+  name: 'ember-file-drop-target',
+  isDevelopingAddon: function() { return true; }
 };
