@@ -1,3 +1,1 @@
-import FileDropTargetComponent from 'ember-file-drop-target/components/file-drop-target';
-
-export default FileDropTargetComponent;
+export { default } from 'ember-file-drop-target/components/file-drop-target';
